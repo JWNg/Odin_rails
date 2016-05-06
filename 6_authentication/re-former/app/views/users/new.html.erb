@@ -1,0 +1,42 @@
+<!-- >
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+<p>This will be a signup page for new users.</p>
+
+<form accept-charset="UTF-8" action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  
+  Username: <input id="username" type="text" name="user[username]" ><br>
+  
+  Email: <input id="email" type="text" name="user[email]" ><br>
+  
+  Password: <input id="password" type="text" name="user[password]" ><br>
+  
+  <input type="submit" value="Submit">
+</form> 
+-->
+
+
+<!-- <%= form_tag("/users", method: "post") do %>
+   <%= label_tag(:q, "inputs:") %>
+   <%= text_field_tag(:username) %>
+ 	  <%= text_field_tag(:email) %>
+ 	  <%= text_field_tag(:password) %>
+   <%= submit_tag("create") %>
+ <% end %> -->
+
+
+<%= form_for @user do |f| %>
+	<ul>
+	  <% @user.errors.full_messages.each do |error| %>
+	  <li><%= error %></li>
+	  <% end %>
+	</ul>
+
+  username	: <%= f.text_field :username %><br />
+  email		: <%= f.text_field :email, :value => "SAMPLE@example.com" %><br />
+  password 	: <%= f.text_field :password %><br />
+  <%= f.submit %>
+<% end %>
+	  
+	  

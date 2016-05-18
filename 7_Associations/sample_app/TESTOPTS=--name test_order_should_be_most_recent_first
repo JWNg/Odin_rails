@@ -1,0 +1,18 @@
+Started
+
+
+
+Progress: |[0m[1000D[K[31m FAIL[0m["test_order_should_be_most_recent_first", MicropostTest, 2016-05-18 04:54:38 -0400]
+ test_order_should_be_most_recent_first#MicropostTest (1463561678.70s)
+        --- expected
+        +++ actual
+        @@ -1 +1 @@
+        -#<Micropost id: 941832919, content: "Writing a short test", user_id: nil, created_at: "2016-05-18 14:02:26", updated_at: "2016-05-18 14:02:26">
+        +#<Micropost id: 12348100, content: "Sad cats are sad: http://youtu.be/PKffm2uI4dk", user_id: nil, created_at: "2016-05-18 12:02:26", updated_at: "2016-05-18 14:02:26">
+        test/models/micropost_test.rb:30:in `block in <class:MicropostTest>'
+
+[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m[32m=[0m|
+
+Finished in 1.38790s
+5 tests, 5 assertions, [31m1 failures, 0 errors, [0m[33m0 skips[0m
+]2;[Minitest results] 5 tests

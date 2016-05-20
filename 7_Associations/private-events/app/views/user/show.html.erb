@@ -1,0 +1,8 @@
+<h1>User#show</h1>
+
+<% if @user.name %>
+	<p>current user is => <%= @user.name %></p>
+	<p> <$=@user.events.each{|e| e %></p>
+<% else %>
+	<p>no one is currently logged in</p>
+<% end %>

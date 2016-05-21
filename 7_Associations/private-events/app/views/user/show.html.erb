@@ -2,7 +2,16 @@
 
 <% if @user.name %>
 	<p>current user is => <%= @user.name %></p>
-	<p> <$=@user.events.each{|e| e %></p>
+	<td><%= link_to "make new event!", new_event_path %><td><br/>
 <% else %>
 	<p>no one is currently logged in</p>
+<% end %>
+
+<% if @events#binding.pry %>
+	<% @events.each do|event| %>
+	<% #binding.pry %>
+	date: <%= event[:date]%> <br />
+	description: <%= event.description %> <br />
+	<% end %>
+	
 <% end %>

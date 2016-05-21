@@ -14,6 +14,8 @@
     <%= yield %>
 
     <%= debug(params) if Rails.env.development? %>
+	<p>session => <%= @session if @session %></p>
+	<p>params => <%= @params if @params %></p>
   </div>
 
 </body>

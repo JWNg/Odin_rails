@@ -1,9 +1,9 @@
 module UserHelper
   def log_in(user)
-    session[:name] = user.name
+    session[:user_id] = user.id
   end
   
   def current_user
-    @current_user #||= User.find_by(name: session[:user_id])
+    @current_user ||= User.find_by_id(session[:user_id])
   end
 end

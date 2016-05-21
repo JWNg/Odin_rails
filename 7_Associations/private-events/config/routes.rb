@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'events/new'
-
-  #get    'login'   => 'sessions#new'
-  #post   'login'   => 'sessions#create'
-  #delete 'logout'  => 'sessions#destroy'
   root      'user#new'
+  resources :event, only: [:new, :index, :create, :show]
   resources :user, only: [:new, :show, :create]
 
   # The priority is based upon order of creation: first created -> highest priority.

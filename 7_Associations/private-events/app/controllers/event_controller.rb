@@ -1,25 +1,29 @@
 class EventController < ApplicationController
   def new
+
     @event = Event.new
     @params = params
     @session = session
   end
 
   def index
-    binding.pry
+
     @event = Events
   end
   
   def create
+
     @event = current_user.events.build(event_params) 
     @event.save
     @user = current_user 
-    binding.pry
+    #binding.pry
     #redirect_to user_path(@user)
-    render @event
+    render 'show'
   end
   
   def show
+    @event = Event.find_by(id: params[:id])
+    
   end
   
   private

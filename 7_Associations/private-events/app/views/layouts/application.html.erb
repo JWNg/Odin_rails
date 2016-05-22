@@ -16,6 +16,7 @@
     <%= debug(params) if Rails.env.development? %>
 	<p>session => <%= @session if @session %></p>
 	<p>params => <%= @params if @params %></p>
+	<p><%= link_to "Log out", logout_path, method: "delete" %></p>
   </div>
 
 </body>

@@ -1,0 +1,14 @@
+<h1>Flights</h1> 
+
+<table>
+<tbody>
+	<tr>
+		<td>Flight ID => <%= @flight.id %></td>
+		<td>DATE => <%= @flight.start_date_time %></td>
+		<td>STARTING AIRPORT => <%= @starting_airport %></td></br>
+		<td>DESTINATION AIRPORT => <%= @destination_airport %></td></br>
+	</tr>
+</tbody>
+</table>
+
+<%= render 'customer_info_form' %>

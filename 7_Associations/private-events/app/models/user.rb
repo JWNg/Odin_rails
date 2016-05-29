@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
   validates :name, presence: true
-  has_many :events, foreign_key: :creator_id
-  has_many :attended_event, through: :events_users, foreign_key: :event_id, class_name: :event
+  
+  has_many :events, :foreign_key => :creator_id
+  
+  has_many :attended_events, through: :invites
+  has_many :invites, foreign_key: :attendee_id
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

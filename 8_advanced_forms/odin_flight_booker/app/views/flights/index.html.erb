@@ -1,0 +1,12 @@
+<h1>Flights</h1> 
+
+<%= render 'search' %>
+
+<% if @search_results %>
+	<%= render 'results' %>
+
+<% else %>
+
+	<p> No results currently </p>
+
+<% end %>

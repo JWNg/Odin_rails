@@ -1,0 +1,21 @@
+
+
+<% if @search_results.size > 0 %>
+	<%= form_tag bookings_new_path, method: "get" do %>
+
+		<% @search_results.each do |f| %>
+			<%= radio_button_tag(:flight_id, f.id )%>
+			<%= hidden_field_tag(:number_of_passengers, params[:number_of_passengers]) %>
+			<%= f.id %>
+			<%= f.start_date_time %>
+			<%= f.from_airport %>
+			<%= f.to_airport %>
+			
+		</br>
+		<% end %>
+	
+	  	<%= submit_tag "Select", :name => nil, class: "button" %>
+		
+	<% end %>
+<% end %>
+	

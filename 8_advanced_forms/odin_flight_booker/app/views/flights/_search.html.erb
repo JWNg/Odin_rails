@@ -1,0 +1,12 @@
+<%= form_tag root_path, method: "get" do %>
+  <%= hidden_field_tag :search %>
+  
+  	<%= select_tag :from, options_for_select(@airport_options), prompt: "From:" %>
+	<%= select_tag :to, options_for_select(@airport_options), prompt: "To:" %>
+	<%= select_tag :date, options_for_select(@dates), prompt: "date:" %>
+	<%= select_tag :number_of_passengers, options_for_select(@number_of_passengers), prompt: "number of passengers:" %>
+
+  	<%= submit_tag "Search", :name => nil, class: "button" %>
+	
+<% end %>
+

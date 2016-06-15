@@ -1,16 +1,19 @@
 
 
 <% if @search_results.size > 0 %>
-	<%= form_tag bookings_new_path, method: "get" do %>
+	<%= form_tag new_booking_path, method: "get" do %>
 
-		<% @search_results.each do |f| %>
-			<%= radio_button_tag(:flight_id, f.id )%>
-			<%= hidden_field_tag(:number_of_passengers, params[:number_of_passengers]) %>
-			<%= f.id %>
-			<%= f.start_date_time %>
-			<%= f.from_airport %>
-			<%= f.to_airport %>
-			
+		<% @search_results.each do |flight| %>
+		<tbody>
+			<tr>
+			<td><%= radio_button_tag(:flight_id, flight.id )%></td>
+			<td><%= hidden_field_tag(:number_of_passengers, params[:number_of_passengers]) %></td>
+			<td><%= flight.id %></td>
+			<td><%= flight.start_date_time %></td>
+			<td><%= flight.from_airport.code %></td>
+			<td><%= flight.to_airport.code %></td>
+			</tr>
+		</tbody>
 		</br>
 		<% end %>
 	

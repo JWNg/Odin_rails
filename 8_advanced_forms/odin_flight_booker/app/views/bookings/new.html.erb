@@ -1,14 +1,33 @@
-<h1>Flights</h1> 
 
-<table>
-<tbody>
-	<tr>
-		<td>Flight ID => <%= @flight.id %></td>
-		<td>DATE => <%= @flight.start_date_time %></td>
-		<td>STARTING AIRPORT => <%= @starting_airport %></td></br>
-		<td>DESTINATION AIRPORT => <%= @destination_airport %></td></br>
-	</tr>
-</tbody>
-</table>
+<h1>Booking Page</h1>
 
-<%= render 'customer_info_form' %>
+<fieldset>
+  <legend>Trip Details</legend>
+  <h3>Flight #<%= @flight.id %></h3>
+  <h3>
+  <%= @flight.from_airport.code %> -> <%= @flight.to_airport.code %>
+ 
+  </h3>
+  <p><%= @flight.start_date_time.strftime("%A, %B %d, %Y") %></p>
+</fieldset>
+<div class="row">
+  <div class="large-6 columns"> 
+
+	<%= form_for @booking do |f| %>
+	
+		<%= f.fields_for :flight do |builder| %>
+			<% hidden_field_tag(:id, params[:flight_id].to_i) %>
+			<%= builder.fields_for(:passengers) do |passenger| %>
+				<div class="row">				
+				<%= passenger.label :name %>
+				<%= passenger.text_field :name %>
+				<%= passenger.label :email %>
+				<%= passenger.text_field :email %>
+				</div>  
+			<% end %>
+		<% end %>	
+	<%= f.submit "Book Flight", class: "button" %>
+	<% end %>
+	<% binding.pry %>
+  </div>
+</div>

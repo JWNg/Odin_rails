@@ -2,7 +2,7 @@ class FlightsController < ApplicationController
 
   def index
     @airport_options = Airport.all.map{|a| [a.code, a.id] } 
-    @dates = Flight.all.map{|f| [f.start_date_time] }
+    @dates = Flight.pluck(:start_date_time).uniq #all.map{|f| [f.start_date_time] }
     @number_of_passengers = (1..4).map {|number| [number.to_s]}
     @search_results = Flight.search(params)
   end
